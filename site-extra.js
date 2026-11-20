@@ -1,0 +1,2 @@
+// Shared lightweight utilities for HushArt Armenian Top Store extra pages.
+window.HS={async api(path,options={}){const r=await fetch(path,{credentials:'same-origin',...options});const body=await r.json().catch(()=>({error:'Սերվերի սխալ'}));if(!r.ok)throw Error(body.error||'Սխալ');return body},escape(value){return String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}};
